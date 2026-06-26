@@ -1,0 +1,12 @@
+project_path: .
+scan_scope:
+  - src
+  - tests
+exclude_paths:
+  - dist
+  - coverage
+auto_fix: true
+severity_threshold: should
+ts_version_expected: "6.0.0"
+changedOnly: true
+baseRef: "origin/main"

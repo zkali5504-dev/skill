@@ -1,0 +1,39 @@
+name: ts6-esm-quality-audit
+version: 1.5.3
+title: TypeScript 6.0 ESM 代码质量审查与修复
+description: 面向 TypeScript 6.0 ESM 项目执行结构、命名、冗余、导入可解析性、注释规范与依赖健康审查并输出分级修复方案。
+author: zkali5504-dev
+language: zh-CN
+status: draft
+scope:
+  - typescript 6.0 esm 审查
+  - 代码质量治理
+  - 项目结构治理
+  - 命名规范治理
+  - 函数冗余治理
+  - esm import可解析性治理
+  - 循环依赖检测
+  - 分层架构约束治理
+  - 代码注释规范治理
+  - 仅变更文件修复（git diff）
+dependencies:
+  - type: runtime
+    name: node
+    version_constraint: ">=18.0.0"
+    optional: false
+    install_hint: "安装 Node.js 18+（https://nodejs.org）"
+  - type: tool
+    name: git
+    version_constraint: ">=2.30.0"
+    optional: true
+    install_hint: "安装 Git 并确保仓库已初始化"
+maintainers:
+  - zkali5504-dev
+changelog:
+  - version: 1.5.3
+    date: 2026-06-26
+    breaking: false
+    changes:
+      - 新增 scripts/git-changed-files.ts
+      - run-audit 支持 --changed-only 与 --base-ref
+      - apply-fixes 支持仅对变更文件执行自动修复
